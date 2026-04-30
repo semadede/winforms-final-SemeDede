@@ -23,5 +23,16 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
         {
             Application.Exit();
         }
+
+        private void etkinlikYönetimiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void etkinlikListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EtkinlikListeForm form = new EtkinlikListeForm(_aktifKullanici);
+            form.ShowDialog();
+        }
     }
 }

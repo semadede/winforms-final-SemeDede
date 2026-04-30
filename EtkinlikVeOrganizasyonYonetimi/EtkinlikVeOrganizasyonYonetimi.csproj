@@ -154,7 +154,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DatabaseHelper.cs" />
+    <Compile Include="Database\EtkinlikRepository.cs" />
+    <Compile Include="Database\EtkinlikTurRepository.cs" />
     <Compile Include="Database\KullaniciRepository.cs" />
+    <Compile Include="Database\MekanRepository.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +170,18 @@
     <Compile Include="Forms\AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EtkinlikForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EtkinlikForm.Designer.cs">
+      <DependentUpon>EtkinlikForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EtkinlikListeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EtkinlikListeForm.Designer.cs">
+      <DependentUpon>EtkinlikListeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +189,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Etkinlik.cs" />
+    <Compile Include="Models\EtkinlikTur.cs" />
     <Compile Include="Models\Kullanici.cs" />
     <Compile Include="Models\Mekan.cs" />
     <Compile Include="Models\Tedarikci.cs" />
@@ -181,6 +197,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EtkinlikForm.resx">
+      <DependentUpon>EtkinlikForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EtkinlikListeForm.resx">
+      <DependentUpon>EtkinlikListeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
