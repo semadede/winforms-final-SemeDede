@@ -47,5 +47,19 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void MekanSil(int mekanId)
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = "DELETE FROM Mekanlar WHERE MekanId = @MekanId";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@MekanId", mekanId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
+        
 }

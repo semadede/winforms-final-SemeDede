@@ -188,6 +188,18 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MekanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MekanForm.Designer.cs">
+      <DependentUpon>MekanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MekanListeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MekanListeForm.Designer.cs">
+      <DependentUpon>MekanListeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Etkinlik.cs" />
     <Compile Include="Models\EtkinlikTur.cs" />
     <Compile Include="Models\Kullanici.cs" />
@@ -206,6 +218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MekanForm.resx">
+      <DependentUpon>MekanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MekanListeForm.resx">
+      <DependentUpon>MekanListeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

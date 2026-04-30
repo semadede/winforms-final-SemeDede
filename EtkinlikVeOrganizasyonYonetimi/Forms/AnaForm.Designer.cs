@@ -31,7 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.etkinlikYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etkinlikListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yeniEtkinlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mekanYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tedarikçiYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tedarikçiListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +63,6 @@
             // 
             this.etkinlikYönetimiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.etkinlikListesiToolStripMenuItem,
-            this.yeniEtkinlikToolStripMenuItem,
             this.mekanYönetimiToolStripMenuItem});
             this.etkinlikYönetimiToolStripMenuItem.Name = "etkinlikYönetimiToolStripMenuItem";
             this.etkinlikYönetimiToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
@@ -78,17 +76,12 @@
             this.etkinlikListesiToolStripMenuItem.Text = "Etkinlik Listesi";
             this.etkinlikListesiToolStripMenuItem.Click += new System.EventHandler(this.etkinlikListesiToolStripMenuItem_Click);
             // 
-            // yeniEtkinlikToolStripMenuItem
-            // 
-            this.yeniEtkinlikToolStripMenuItem.Name = "yeniEtkinlikToolStripMenuItem";
-            this.yeniEtkinlikToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.yeniEtkinlikToolStripMenuItem.Text = "Yeni Etkinlik";
-            // 
             // mekanYönetimiToolStripMenuItem
             // 
             this.mekanYönetimiToolStripMenuItem.Name = "mekanYönetimiToolStripMenuItem";
             this.mekanYönetimiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.mekanYönetimiToolStripMenuItem.Text = "Mekan Yönetimi";
+            this.mekanYönetimiToolStripMenuItem.Click += new System.EventHandler(this.mekanYönetimiToolStripMenuItem_Click);
             // 
             // tedarikçiYönetimiToolStripMenuItem
             // 
@@ -186,7 +179,6 @@
         private System.Windows.Forms.ToolStripMenuItem bütçeFaturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bütçeFaturaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem etkinlikListesiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yeniEtkinlikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mekanYönetimiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tedarikçiListesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yeniTedarikçiToolStripMenuItem;
