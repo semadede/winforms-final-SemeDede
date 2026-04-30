@@ -1,0 +1,27 @@
+﻿using System;
+using System.Windows.Forms;
+using EtkinlikVeOrganizasyonYonetimi.Models;
+
+namespace EtkinlikVeOrganizasyonYonetimi.Forms
+{
+    public partial class AnaForm : Form
+    {
+        private Kullanici _aktifKullanici;
+
+        public AnaForm(Kullanici kullanici)
+        {
+            InitializeComponent();
+            _aktifKullanici = kullanici;
+        }
+
+        private void AnaForm_Load(object sender, EventArgs e)
+        {
+            this.Text = $"Etkinlik Yönetim Sistemi - {_aktifKullanici.KullaniciAdi} ({_aktifKullanici.Rol})";
+        }
+
+        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}

@@ -33,7 +33,14 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             }
 
             MessageBox.Show($"Hoş geldiniz, {kullanici.KullaniciAdi}!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AnaForm anaForm = new AnaForm(kullanici);
+            anaForm.Show();
             this.Hide();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
