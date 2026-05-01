@@ -1,4 +1,4 @@
-﻿namespace EtkinlikVeOrganizasyonYonetimi.Forms
+﻿    namespace EtkinlikVeOrganizasyonYonetimi.Forms
 {
     partial class AnaForm
     {
@@ -34,7 +34,6 @@
             this.mekanYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tedarikçiYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tedarikçiListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yeniTedarikçiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etkinliğeTedarikçiAtaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bütçeFaturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bütçeYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,7 +86,6 @@
             // 
             this.tedarikçiYönetimiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tedarikçiListesiToolStripMenuItem,
-            this.yeniTedarikçiToolStripMenuItem,
             this.etkinliğeTedarikçiAtaToolStripMenuItem});
             this.tedarikçiYönetimiToolStripMenuItem.Name = "tedarikçiYönetimiToolStripMenuItem";
             this.tedarikçiYönetimiToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
@@ -100,17 +98,12 @@
             this.tedarikçiListesiToolStripMenuItem.Text = "Tedarikçi Listesi";
             this.tedarikçiListesiToolStripMenuItem.Click += new System.EventHandler(this.tedarikçiListesiToolStripMenuItem_Click);
             // 
-            // yeniTedarikçiToolStripMenuItem
-            // 
-            this.yeniTedarikçiToolStripMenuItem.Name = "yeniTedarikçiToolStripMenuItem";
-            this.yeniTedarikçiToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
-            this.yeniTedarikçiToolStripMenuItem.Text = "Yeni Tedarikçi";
-            // 
             // etkinliğeTedarikçiAtaToolStripMenuItem
             // 
             this.etkinliğeTedarikçiAtaToolStripMenuItem.Name = "etkinliğeTedarikçiAtaToolStripMenuItem";
             this.etkinliğeTedarikçiAtaToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.etkinliğeTedarikçiAtaToolStripMenuItem.Text = "Etkinliğe Tedarikçi Ata";
+            this.etkinliğeTedarikçiAtaToolStripMenuItem.Click += new System.EventHandler(this.etkinliğeTedarikçiAtaToolStripMenuItem_Click);
             // 
             // bütçeFaturaToolStripMenuItem
             // 
@@ -182,7 +175,6 @@
         private System.Windows.Forms.ToolStripMenuItem etkinlikListesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mekanYönetimiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tedarikçiListesiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yeniTedarikçiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem etkinliğeTedarikçiAtaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bütçeYönetimiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maliyetGirişiToolStripMenuItem;

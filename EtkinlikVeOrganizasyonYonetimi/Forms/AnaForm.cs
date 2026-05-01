@@ -46,5 +46,11 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             TedarikciListeForm form = new TedarikciListeForm();
             form.ShowDialog();
         }
+
+        private void etkinliğeTedarikçiAtaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TedarikciAtamaForm form = new TedarikciAtamaForm();
+            form.ShowDialog();
+        }
     }
 }
