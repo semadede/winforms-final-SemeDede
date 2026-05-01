@@ -37,7 +37,6 @@
             this.etkinliğeTedarikçiAtaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bütçeFaturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bütçeYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maliyetGirişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.faturaOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bütçeFaturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlIcerik = new System.Windows.Forms.Panel();
@@ -109,23 +108,18 @@
             // 
             this.bütçeFaturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bütçeYönetimiToolStripMenuItem,
-            this.maliyetGirişiToolStripMenuItem,
             this.faturaOluşturToolStripMenuItem});
             this.bütçeFaturaToolStripMenuItem.Name = "bütçeFaturaToolStripMenuItem";
             this.bütçeFaturaToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.bütçeFaturaToolStripMenuItem.Text = "Bütçe & Fatura";
+
             // 
             // bütçeYönetimiToolStripMenuItem
             // 
             this.bütçeYönetimiToolStripMenuItem.Name = "bütçeYönetimiToolStripMenuItem";
-            this.bütçeYönetimiToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.bütçeYönetimiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.bütçeYönetimiToolStripMenuItem.Text = "Bütçe Yönetimi";
-            // 
-            // maliyetGirişiToolStripMenuItem
-            // 
-            this.maliyetGirişiToolStripMenuItem.Name = "maliyetGirişiToolStripMenuItem";
-            this.maliyetGirişiToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
-            this.maliyetGirişiToolStripMenuItem.Text = "Maliyet Girişi";
+            this.bütçeYönetimiToolStripMenuItem.Click += new System.EventHandler(this.bütçeYönetimiToolStripMenuItem_Click);
             // 
             // faturaOluşturToolStripMenuItem
             // 
@@ -177,7 +171,6 @@
         private System.Windows.Forms.ToolStripMenuItem tedarikçiListesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem etkinliğeTedarikçiAtaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bütçeYönetimiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem maliyetGirişiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem faturaOluşturToolStripMenuItem;
     }
 }

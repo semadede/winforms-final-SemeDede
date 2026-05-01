@@ -153,6 +153,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\ButceRepository.cs" />
     <Compile Include="Database\DatabaseHelper.cs" />
     <Compile Include="Database\EtkinlikRepository.cs" />
     <Compile Include="Database\EtkinlikTedarikciRepository.cs" />
@@ -171,6 +172,12 @@
     </Compile>
     <Compile Include="Forms\AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ButceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ButceForm.Designer.cs">
+      <DependentUpon>ButceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EtkinlikForm.cs">
       <SubType>Form</SubType>
@@ -220,9 +227,11 @@
     <Compile Include="Forms\TedarikciListeForm.Designer.cs">
       <DependentUpon>TedarikciListeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Butce.cs" />
     <Compile Include="Models\Etkinlik.cs" />
     <Compile Include="Models\EtkinlikTedarikci.cs" />
     <Compile Include="Models\EtkinlikTur.cs" />
+    <Compile Include="Models\GerceklesenMaliyet.cs" />
     <Compile Include="Models\Kategori.cs" />
     <Compile Include="Models\KategoriRepository.cs" />
     <Compile Include="Models\Kullanici.cs" />
@@ -232,6 +241,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ButceForm.resx">
+      <DependentUpon>ButceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EtkinlikForm.resx">
       <DependentUpon>EtkinlikForm.cs</DependentUpon>

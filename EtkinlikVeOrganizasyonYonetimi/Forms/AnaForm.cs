@@ -52,5 +52,12 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             TedarikciAtamaForm form = new TedarikciAtamaForm();
             form.ShowDialog();
         }
+
+
+        private void bütçeYönetimiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ButceForm form = new ButceForm();
+            form.ShowDialog();
+        }
     }
 }
