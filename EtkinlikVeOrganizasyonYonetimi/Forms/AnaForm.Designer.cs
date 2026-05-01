@@ -72,14 +72,14 @@
             // etkinlikListesiToolStripMenuItem
             // 
             this.etkinlikListesiToolStripMenuItem.Name = "etkinlikListesiToolStripMenuItem";
-            this.etkinlikListesiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.etkinlikListesiToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.etkinlikListesiToolStripMenuItem.Text = "Etkinlik Listesi";
             this.etkinlikListesiToolStripMenuItem.Click += new System.EventHandler(this.etkinlikListesiToolStripMenuItem_Click);
             // 
             // mekanYönetimiToolStripMenuItem
             // 
             this.mekanYönetimiToolStripMenuItem.Name = "mekanYönetimiToolStripMenuItem";
-            this.mekanYönetimiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mekanYönetimiToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.mekanYönetimiToolStripMenuItem.Text = "Mekan Yönetimi";
             this.mekanYönetimiToolStripMenuItem.Click += new System.EventHandler(this.mekanYönetimiToolStripMenuItem_Click);
             // 
@@ -98,6 +98,7 @@
             this.tedarikçiListesiToolStripMenuItem.Name = "tedarikçiListesiToolStripMenuItem";
             this.tedarikçiListesiToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.tedarikçiListesiToolStripMenuItem.Text = "Tedarikçi Listesi";
+            this.tedarikçiListesiToolStripMenuItem.Click += new System.EventHandler(this.tedarikçiListesiToolStripMenuItem_Click);
             // 
             // yeniTedarikçiToolStripMenuItem
             // 

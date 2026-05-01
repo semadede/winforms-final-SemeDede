@@ -40,5 +40,11 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             MekanListeForm form = new MekanListeForm();
             form.ShowDialog();
         }
+
+        private void tedarikçiListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TedarikciListeForm form = new TedarikciListeForm();
+            form.ShowDialog();
+        }
     }
 }

@@ -38,40 +38,44 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(300, 74);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(343, 117);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 16);
+            this.label1.Size = new System.Drawing.Size(101, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kullanıcı Adı";
             // 
             // txtKullaniciAdi
             // 
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(292, 93);
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(270, 140);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(100, 22);
+            this.txtKullaniciAdi.Size = new System.Drawing.Size(257, 22);
             this.txtKullaniciAdi.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(326, 133);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(369, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 16);
+            this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Şifre";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtSifre
             // 
-            this.txtSifre.Location = new System.Drawing.Point(292, 152);
+            this.txtSifre.Location = new System.Drawing.Point(270, 199);
             this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(100, 22);
+            this.txtSifre.Size = new System.Drawing.Size(257, 22);
             this.txtSifre.TabIndex = 3;
             // 
             // btnGiris
             // 
-            this.btnGiris.Location = new System.Drawing.Point(304, 190);
+            this.btnGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGiris.Location = new System.Drawing.Point(338, 239);
             this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(75, 23);
+            this.btnGiris.Size = new System.Drawing.Size(115, 46);
             this.btnGiris.TabIndex = 4;
             this.btnGiris.Text = "Giriş Yap";
             this.btnGiris.UseVisualStyleBackColor = true;
