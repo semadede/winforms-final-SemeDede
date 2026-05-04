@@ -2,15 +2,8 @@
 {
     partial class EtkinlikForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
@@ -37,10 +26,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtEtkinlikAdi = new System.Windows.Forms.TextBox();
             this.cmbTur = new System.Windows.Forms.ComboBox();
             this.cmbMekan = new System.Windows.Forms.ComboBox();
             this.cmbDurum = new System.Windows.Forms.ComboBox();
+            this.cmbMusteriKullanici = new System.Windows.Forms.ComboBox();
             this.txtMusteriAdi = new System.Windows.Forms.TextBox();
             this.txtMusteriTelefon = new System.Windows.Forms.TextBox();
             this.txtSozlesmeBedeli = new System.Windows.Forms.TextBox();
@@ -49,156 +40,121 @@
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnIptal = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
             // label1
-            // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 45);
+            this.label1.Location = new System.Drawing.Point(110, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Etkinlik Adı";
-            // 
+            this.label1.Text = "Etkinlik Adi";
             // label2
-            // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 91);
+            this.label2.Location = new System.Drawing.Point(100, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Etkinlik Türü";
-            // 
+            this.label2.Text = "Etkinlik Turu";
             // label3
-            // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(79, 135);
+            this.label3.Location = new System.Drawing.Point(136, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mekan";
-            // 
             // label4
-            // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(79, 178);
+            this.label4.Location = new System.Drawing.Point(80, 177);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 16);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Başlangıç Tarihi";
-            // 
+            this.label4.Text = "Baslangic Tarihi";
             // label5
-            // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(79, 223);
+            this.label5.Location = new System.Drawing.Point(113, 221);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 16);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Bitiş Tarihi";
-            // 
+            this.label5.Text = "Bitis Tarihi";
             // label6
-            // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(79, 267);
+            this.label6.Location = new System.Drawing.Point(108, 262);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 16);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Müşteri Adı";
-            // 
+            this.label6.Text = "Musteri Adi";
             // label7
-            // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(79, 312);
+            this.label7.Location = new System.Drawing.Point(82, 309);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 16);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Müşteri Telefon";
-            // 
+            this.label7.Text = "Musteri Telefon";
             // label8
-            // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(79, 356);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 16);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Sözleşme Bedeli";
-            // 
+            this.label8.Text = "Sozlesme Bedeli";
             // label9
-            // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(79, 399);
+            this.label9.Location = new System.Drawing.Point(136, 397);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 16);
             this.label9.TabIndex = 8;
             this.label9.Text = "Durum";
-            // 
+            // label10
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(79, 435);
+            this.label10.Name = "label10";
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Musteri Hesabi";
             // txtEtkinlikAdi
-            // 
-            this.txtEtkinlikAdi.Location = new System.Drawing.Point(157, 42);
+            this.txtEtkinlikAdi.Location = new System.Drawing.Point(198, 42);
             this.txtEtkinlikAdi.Name = "txtEtkinlikAdi";
-            this.txtEtkinlikAdi.Size = new System.Drawing.Size(100, 22);
+            this.txtEtkinlikAdi.Size = new System.Drawing.Size(200, 22);
             this.txtEtkinlikAdi.TabIndex = 9;
-            // 
             // cmbTur
-            // 
             this.cmbTur.FormattingEnabled = true;
-            this.cmbTur.Location = new System.Drawing.Point(164, 88);
+            this.cmbTur.Location = new System.Drawing.Point(198, 91);
             this.cmbTur.Name = "cmbTur";
-            this.cmbTur.Size = new System.Drawing.Size(121, 24);
+            this.cmbTur.Size = new System.Drawing.Size(200, 24);
             this.cmbTur.TabIndex = 10;
-            // 
             // cmbMekan
-            // 
             this.cmbMekan.FormattingEnabled = true;
-            this.cmbMekan.Location = new System.Drawing.Point(133, 132);
+            this.cmbMekan.Location = new System.Drawing.Point(198, 132);
             this.cmbMekan.Name = "cmbMekan";
-            this.cmbMekan.Size = new System.Drawing.Size(121, 24);
+            this.cmbMekan.Size = new System.Drawing.Size(200, 24);
             this.cmbMekan.TabIndex = 11;
-            // 
             // cmbDurum
-            // 
             this.cmbDurum.FormattingEnabled = true;
-            this.cmbDurum.Location = new System.Drawing.Point(131, 396);
+            this.cmbDurum.Location = new System.Drawing.Point(198, 396);
             this.cmbDurum.Name = "cmbDurum";
-            this.cmbDurum.Size = new System.Drawing.Size(121, 24);
+            this.cmbDurum.Size = new System.Drawing.Size(200, 24);
             this.cmbDurum.TabIndex = 12;
-            // 
+            // cmbMusteriKullanici
+            this.cmbMusteriKullanici.FormattingEnabled = true;
+            this.cmbMusteriKullanici.Location = new System.Drawing.Point(198, 432);
+            this.cmbMusteriKullanici.Name = "cmbMusteriKullanici";
+            this.cmbMusteriKullanici.Size = new System.Drawing.Size(200, 24);
+            this.cmbMusteriKullanici.TabIndex = 21;
             // txtMusteriAdi
-            // 
-            this.txtMusteriAdi.Location = new System.Drawing.Point(158, 264);
+            this.txtMusteriAdi.Location = new System.Drawing.Point(198, 261);
             this.txtMusteriAdi.Name = "txtMusteriAdi";
-            this.txtMusteriAdi.Size = new System.Drawing.Size(100, 22);
+            this.txtMusteriAdi.Size = new System.Drawing.Size(200, 22);
             this.txtMusteriAdi.TabIndex = 13;
-            // 
             // txtMusteriTelefon
-            // 
-            this.txtMusteriTelefon.Location = new System.Drawing.Point(184, 309);
+            this.txtMusteriTelefon.Location = new System.Drawing.Point(198, 309);
             this.txtMusteriTelefon.Name = "txtMusteriTelefon";
-            this.txtMusteriTelefon.Size = new System.Drawing.Size(100, 22);
+            this.txtMusteriTelefon.Size = new System.Drawing.Size(200, 22);
             this.txtMusteriTelefon.TabIndex = 14;
-            // 
             // txtSozlesmeBedeli
-            // 
-            this.txtSozlesmeBedeli.Location = new System.Drawing.Point(194, 353);
+            this.txtSozlesmeBedeli.Location = new System.Drawing.Point(198, 353);
             this.txtSozlesmeBedeli.Name = "txtSozlesmeBedeli";
-            this.txtSozlesmeBedeli.Size = new System.Drawing.Size(100, 22);
+            this.txtSozlesmeBedeli.Size = new System.Drawing.Size(200, 22);
             this.txtSozlesmeBedeli.TabIndex = 15;
-            // 
             // dtpBaslangic
-            // 
-            this.dtpBaslangic.Location = new System.Drawing.Point(189, 173);
+            this.dtpBaslangic.Location = new System.Drawing.Point(198, 173);
             this.dtpBaslangic.Name = "dtpBaslangic";
             this.dtpBaslangic.Size = new System.Drawing.Size(200, 22);
             this.dtpBaslangic.TabIndex = 16;
-            // 
             // dtpBitis
-            // 
-            this.dtpBitis.Location = new System.Drawing.Point(154, 223);
+            this.dtpBitis.Location = new System.Drawing.Point(198, 218);
             this.dtpBitis.Name = "dtpBitis";
             this.dtpBitis.Size = new System.Drawing.Size(200, 22);
             this.dtpBitis.TabIndex = 17;
-            // 
             // btnKaydet
-            // 
             this.btnKaydet.Location = new System.Drawing.Point(561, 109);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(132, 130);
@@ -206,22 +162,20 @@
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
             // btnIptal
-            // 
             this.btnIptal.Location = new System.Drawing.Point(561, 245);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(132, 130);
             this.btnIptal.TabIndex = 19;
-            this.btnIptal.Text = "İptal";
+            this.btnIptal.Text = "Iptal";
             this.btnIptal.UseVisualStyleBackColor = true;
             this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
-            // 
             // EtkinlikForm
-            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 504);
+            this.Controls.Add(this.cmbMusteriKullanici);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnIptal);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.dtpBitis);
@@ -247,7 +201,6 @@
             this.Load += new System.EventHandler(this.EtkinlikForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -261,10 +214,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtEtkinlikAdi;
         private System.Windows.Forms.ComboBox cmbTur;
         private System.Windows.Forms.ComboBox cmbMekan;
         private System.Windows.Forms.ComboBox cmbDurum;
+        private System.Windows.Forms.ComboBox cmbMusteriKullanici;
         private System.Windows.Forms.TextBox txtMusteriAdi;
         private System.Windows.Forms.TextBox txtMusteriTelefon;
         private System.Windows.Forms.TextBox txtSozlesmeBedeli;

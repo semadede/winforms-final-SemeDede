@@ -22,6 +22,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Models
         public string Durum { get; set; }
         public decimal SozlesmeBedeli { get; set; }
         public int OlusturanKullaniciId { get; set; }
+        public int? MusteriKullaniciId { get; set; }
 
 
     }

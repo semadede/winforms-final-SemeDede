@@ -8,14 +8,19 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
 {
     public partial class MekanListeForm : Form
     {
-        public MekanListeForm()
+        private Kullanici _aktifKullanici;
+
+        public MekanListeForm(Kullanici kullanici)
         {
             InitializeComponent();
+            _aktifKullanici = kullanici;
         }
 
         private void MekanListeForm_Load(object sender, EventArgs e)
         {
             MekanlariYukle();
+            // Sadece Admin silebilir
+            btnSil.Visible = _aktifKullanici.Rol == "Admin";
         }
 
         private void MekanlariYukle()
@@ -29,10 +34,10 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             if (dgvMekanlar.Columns.Count > 0)
             {
                 dgvMekanlar.Columns["MekanId"].HeaderText = "ID";
-                dgvMekanlar.Columns["MekanAdi"].HeaderText = "Mekan Adı";
+                dgvMekanlar.Columns["MekanAdi"].HeaderText = "Mekan Adi";
                 dgvMekanlar.Columns["Kapasite"].HeaderText = "Kapasite";
                 dgvMekanlar.Columns["Adres"].HeaderText = "Adres";
-                dgvMekanlar.Columns["KurulumSuresiSaat"].HeaderText = "Kurulum Süresi (Saat)";
+                dgvMekanlar.Columns["KurulumSuresiSaat"].HeaderText = "Kurulum Suresi (Saat)";
             }
         }
 
@@ -47,11 +52,11 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
         {
             if (dgvMekanlar.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Lütfen silmek istediğiniz mekanı seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lutfen silmek istediginiz mekani secin.", "Uyari", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DialogResult sonuc = MessageBox.Show("Bu mekanı silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult sonuc = MessageBox.Show("Bu mekani silmek istediginize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (sonuc == DialogResult.Yes)
             {
                 int mekanId = (int)dgvMekanlar.SelectedRows[0].Cells["MekanId"].Value;

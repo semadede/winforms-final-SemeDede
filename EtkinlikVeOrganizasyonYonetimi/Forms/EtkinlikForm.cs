@@ -9,7 +9,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
     public partial class EtkinlikForm : Form
     {
         private Kullanici _aktifKullanici;
-        private int _etkinlikId; // 0 ise yeni kayıt, > 0 ise düzenleme
+        private int _etkinlikId;
         private List<Mekan> _mekanlar;
 
         public EtkinlikForm(Kullanici kullanici, int etkinlikId = 0)
@@ -21,25 +21,32 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
 
         private void EtkinlikForm_Load(object sender, EventArgs e)
         {
-            // Durum seçeneklerini doldur
+            // Durum seceneklerini doldur
             cmbDurum.Items.AddRange(new string[] { "Taslak", "Onaylandi", "Tamamlandi", "Iptal" });
             cmbDurum.SelectedIndex = 0;
 
-            // Türleri veritabanından doldur
+            // Mekanlari doldur
             MekanRepository mekanRepo = new MekanRepository();
             _mekanlar = mekanRepo.TumMekanlariGetir();
             cmbMekan.DataSource = _mekanlar;
             cmbMekan.DisplayMember = "MekanAdi";
             cmbMekan.ValueMember = "MekanId";
 
-            // Etkinlik türlerini doldur
+            // Etkinlik turlerini doldur
             var turRepo = new EtkinlikTurRepository();
             var turler = turRepo.TumTurleriGetir();
             cmbTur.DataSource = turler;
             cmbTur.DisplayMember = "TurAdi";
             cmbTur.ValueMember = "TurId";
 
-            // Düzenleme modundaysa mevcut veriyi yükle
+            // Musteri kullanicilari doldur
+            KullaniciRepository kullaniciRepo = new KullaniciRepository();
+            List<Kullanici> musteriler = kullaniciRepo.SadeceMusterileriGetir();
+            cmbMusteriKullanici.DataSource = musteriler;
+            cmbMusteriKullanici.DisplayMember = "KullaniciAdi";
+            cmbMusteriKullanici.ValueMember = "KullaniciId";
+
+            // Duzenleme modundaysa mevcut veriyi yukle
             if (_etkinlikId > 0)
             {
                 EtkinlikRepository repo = new EtkinlikRepository();
@@ -55,7 +62,10 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
                 cmbTur.SelectedValue = etkinlik.TurId;
                 cmbMekan.SelectedValue = etkinlik.MekanId;
 
-                this.Text = "Etkinlik Düzenle";
+                if (etkinlik.MusteriKullaniciId.HasValue)
+                    cmbMusteriKullanici.SelectedValue = etkinlik.MusteriKullaniciId.Value;
+
+                this.Text = "Etkinlik Duzenle";
             }
             else
             {
@@ -65,33 +75,28 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            // Boş alan kontrolü
             if (string.IsNullOrEmpty(txtEtkinlikAdi.Text) ||
                 string.IsNullOrEmpty(txtMusteriAdi.Text) ||
                 string.IsNullOrEmpty(txtSozlesmeBedeli.Text))
             {
-                MessageBox.Show("Lütfen zorunlu alanları doldurun.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lutfen zorunlu alanlari doldurun.", "Uyari", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Tarih kontrolü
             if (dtpBitis.Value <= dtpBaslangic.Value)
             {
-                MessageBox.Show("Bitiş tarihi başlangıç tarihinden sonra olmalıdır.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bitis tarihi baslangic tarihinden sonra olmalidir.", "Uyari", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Sözleşme bedeli sayı kontrolü
             if (!decimal.TryParse(txtSozlesmeBedeli.Text, out decimal sozlesmeBedeli))
             {
-                MessageBox.Show("Sözleşme bedeli geçerli bir sayı olmalıdır.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Sozlesme bedeli gecerli bir sayi olmalidir.", "Uyari", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Seçilen mekanın kurulum süresini al
             Mekan secilenMekan = (Mekan)cmbMekan.SelectedItem;
 
-            // Çakışma kontrolü
             EtkinlikRepository repo = new EtkinlikRepository();
             bool cakismaVar = repo.CakismaVarMi(
                 secilenMekan.MekanId,
@@ -103,8 +108,16 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
 
             if (cakismaVar)
             {
-                MessageBox.Show("Seçilen mekan bu tarihte başka bir etkinlik için rezerve edilmiş!", "Çakışma Uyarısı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Secilen mekan bu tarihte baska bir etkinlik icin rezerve edilmis!", "Cakisma Uyarisi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+
+            // Musteri kullanici secimi
+            int? musteriKullaniciId = null;
+            if (cmbMusteriKullanici.SelectedItem != null)
+            {
+                Kullanici secilenKullanici = (Kullanici)cmbMusteriKullanici.SelectedItem;
+                musteriKullaniciId = secilenKullanici.KullaniciId;
             }
 
             Etkinlik etkinlik = new Etkinlik
@@ -119,7 +132,8 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
                 MusteriTelefon = txtMusteriTelefon.Text.Trim(),
                 Durum = cmbDurum.SelectedItem.ToString(),
                 SozlesmeBedeli = sozlesmeBedeli,
-                OlusturanKullaniciId = _aktifKullanici.KullaniciId
+                OlusturanKullaniciId = _aktifKullanici.KullaniciId,
+                MusteriKullaniciId = musteriKullaniciId
             };
 
             if (_etkinlikId == 0)
@@ -127,7 +141,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             else
                 repo.EtkinlikGuncelle(etkinlik);
 
-            MessageBox.Show("Etkinlik başarıyla kaydedildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Etkinlik basariyla kaydedildi.", "Basarili", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 

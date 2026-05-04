@@ -7,7 +7,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
 {
     public class EtkinlikRepository
     {
-        // Tüm etkinlikleri mekan ve tür adlarıyla birlikte getirir
+        // Tum etkinlikleri mekan ve tur adlariyla birlikte getirir
         public List<Etkinlik> TumEtkinlikleriGetir()
         {
             List<Etkinlik> liste = new List<Etkinlik>();
@@ -27,26 +27,61 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
 
                 while (reader.Read())
                 {
-                    liste.Add(new Etkinlik
-                    {
-                        EtkinlikId = (int)reader["EtkinlikId"],
-                        EtkinlikAdi = reader["EtkinlikAdi"].ToString(),
-                        TurId = (int)reader["TurId"],
-                        TurAdi = reader["TurAdi"].ToString(),
-                        MekanId = (int)reader["MekanId"],
-                        MekanAdi = reader["MekanAdi"].ToString(),
-                        BaslangicTarihi = (DateTime)reader["BaslangicTarihi"],
-                        BitisTarihi = (DateTime)reader["BitisTarihi"],
-                        MusteriAdi = reader["MusteriAdi"].ToString(),
-                        MusteriTelefon = reader["MusteriTelefon"].ToString(),
-                        Durum = reader["Durum"].ToString(),
-                        SozlesmeBedeli = (decimal)reader["SozlesmeBedeli"],
-                        OlusturanKullaniciId = reader["OlusturanKullaniciId"] == DBNull.Value ? 0 : (int)reader["OlusturanKullaniciId"]
-                    });
+                    liste.Add(OkunanEtkinlik(reader));
                 }
             }
 
             return liste;
+        }
+
+        // Belirli bir kullaniciya atanmis etkinlikleri getirir
+        public List<Etkinlik> KullaniciyaGoreEtkinlikleriGetir(int kullaniciId)
+        {
+            List<Etkinlik> liste = new List<Etkinlik>();
+
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = @"
+                    SELECT e.*, m.MekanAdi, t.TurAdi 
+                    FROM Etkinlikler e
+                    JOIN Mekanlar m ON e.MekanId = m.MekanId
+                    JOIN EtkinlikTurleri t ON e.TurId = t.TurId
+                    WHERE e.MusteriKullaniciId = @KullaniciId
+                    ORDER BY e.BaslangicTarihi DESC";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@KullaniciId", kullaniciId);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    liste.Add(OkunanEtkinlik(reader));
+                }
+            }
+
+            return liste;
+        }
+
+        // Tekrar eden okuma kodunu tek metoda topladik
+        private Etkinlik OkunanEtkinlik(SqlDataReader reader)
+        {
+            return new Etkinlik
+            {
+                EtkinlikId = (int)reader["EtkinlikId"],
+                EtkinlikAdi = reader["EtkinlikAdi"].ToString(),
+                TurId = (int)reader["TurId"],
+                TurAdi = reader["TurAdi"].ToString(),
+                MekanId = (int)reader["MekanId"],
+                MekanAdi = reader["MekanAdi"].ToString(),
+                BaslangicTarihi = (DateTime)reader["BaslangicTarihi"],
+                BitisTarihi = (DateTime)reader["BitisTarihi"],
+                MusteriAdi = reader["MusteriAdi"].ToString(),
+                MusteriTelefon = reader["MusteriTelefon"].ToString(),
+                Durum = reader["Durum"].ToString(),
+                SozlesmeBedeli = (decimal)reader["SozlesmeBedeli"],
+                OlusturanKullaniciId = reader["OlusturanKullaniciId"] == DBNull.Value ? 0 : (int)reader["OlusturanKullaniciId"]
+            };
         }
 
         // Etkinlik siler
@@ -62,7 +97,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
             }
         }
 
-        // Tek etkinlik getirir (düzenleme için)
+        // Tek etkinlik getirir
         public Etkinlik EtkinlikGetir(int etkinlikId)
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
@@ -80,24 +115,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
-                {
-                    return new Etkinlik
-                    {
-                        EtkinlikId = (int)reader["EtkinlikId"],
-                        EtkinlikAdi = reader["EtkinlikAdi"].ToString(),
-                        TurId = (int)reader["TurId"],
-                        TurAdi = reader["TurAdi"].ToString(),
-                        MekanId = (int)reader["MekanId"],
-                        MekanAdi = reader["MekanAdi"].ToString(),
-                        BaslangicTarihi = (DateTime)reader["BaslangicTarihi"],
-                        BitisTarihi = (DateTime)reader["BitisTarihi"],
-                        MusteriAdi = reader["MusteriAdi"].ToString(),
-                        MusteriTelefon = reader["MusteriTelefon"].ToString(),
-                        Durum = reader["Durum"].ToString(),
-                        SozlesmeBedeli = (decimal)reader["SozlesmeBedeli"],
-                        OlusturanKullaniciId = reader["OlusturanKullaniciId"] == DBNull.Value ? 0 : (int)reader["OlusturanKullaniciId"]
-                    };
-                }
+                    return OkunanEtkinlik(reader);
 
                 return null;
             }
@@ -111,9 +129,9 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
                 conn.Open();
                 string sql = @"
                     INSERT INTO Etkinlikler 
-                    (EtkinlikAdi, TurId, MekanId, BaslangicTarihi, BitisTarihi, MusteriAdi, MusteriTelefon, Durum, SozlesmeBedeli, OlusturanKullaniciId)
+                    (EtkinlikAdi, TurId, MekanId, BaslangicTarihi, BitisTarihi, MusteriAdi, MusteriTelefon, Durum, SozlesmeBedeli, OlusturanKullaniciId, MusteriKullaniciId)
                     VALUES 
-                    (@EtkinlikAdi, @TurId, @MekanId, @BaslangicTarihi, @BitisTarihi, @MusteriAdi, @MusteriTelefon, @Durum, @SozlesmeBedeli, @OlusturanKullaniciId)";
+                    (@EtkinlikAdi, @TurId, @MekanId, @BaslangicTarihi, @BitisTarihi, @MusteriAdi, @MusteriTelefon, @Durum, @SozlesmeBedeli, @OlusturanKullaniciId, @MusteriKullaniciId)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@EtkinlikAdi", etkinlik.EtkinlikAdi);
@@ -126,11 +144,12 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
                 cmd.Parameters.AddWithValue("@Durum", etkinlik.Durum);
                 cmd.Parameters.AddWithValue("@SozlesmeBedeli", etkinlik.SozlesmeBedeli);
                 cmd.Parameters.AddWithValue("@OlusturanKullaniciId", etkinlik.OlusturanKullaniciId);
+                cmd.Parameters.AddWithValue("@MusteriKullaniciId", etkinlik.MusteriKullaniciId.HasValue ? (object)etkinlik.MusteriKullaniciId.Value : DBNull.Value);
                 cmd.ExecuteNonQuery();
             }
         }
 
-        // Etkinlik günceller
+        // Etkinlik gunceller
         public void EtkinlikGuncelle(Etkinlik etkinlik)
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
@@ -146,7 +165,8 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
                     MusteriAdi = @MusteriAdi,
                     MusteriTelefon = @MusteriTelefon,
                     Durum = @Durum,
-                    SozlesmeBedeli = @SozlesmeBedeli
+                    SozlesmeBedeli = @SozlesmeBedeli,
+                    MusteriKullaniciId = @MusteriKullaniciId
                     WHERE EtkinlikId = @EtkinlikId";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -159,19 +179,19 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
                 cmd.Parameters.AddWithValue("@MusteriTelefon", etkinlik.MusteriTelefon ?? "");
                 cmd.Parameters.AddWithValue("@Durum", etkinlik.Durum);
                 cmd.Parameters.AddWithValue("@SozlesmeBedeli", etkinlik.SozlesmeBedeli);
+                cmd.Parameters.AddWithValue("@MusteriKullaniciId", etkinlik.MusteriKullaniciId.HasValue ? (object)etkinlik.MusteriKullaniciId.Value : DBNull.Value);
                 cmd.Parameters.AddWithValue("@EtkinlikId", etkinlik.EtkinlikId);
                 cmd.ExecuteNonQuery();
             }
         }
 
-        // Mekan çakışma kontrolü
+        // Mekan cakisma kontrolu
         public bool CakismaVarMi(int mekanId, DateTime baslangic, DateTime bitis, int kurulumSuresiSaat, int? haricEtkinlikId = null)
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
 
-                // Kurulum süresi dahil kontrol
                 DateTime genisBitis = bitis.AddHours(kurulumSuresiSaat);
                 DateTime genisBaslangic = baslangic.AddHours(-kurulumSuresiSaat);
 

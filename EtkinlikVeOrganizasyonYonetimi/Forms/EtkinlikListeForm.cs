@@ -25,32 +25,40 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
         private void EtkinlikleriYukle()
         {
             EtkinlikRepository repo = new EtkinlikRepository();
-            List<Etkinlik> etkinlikler = repo.TumEtkinlikleriGetir();
+            List<Etkinlik> etkinlikler;
+
+            // Admin tüm etkinlikleri görür, kullanıcı sadece kendine atananları
+            if (_aktifKullanici.Rol == "Admin")
+                etkinlikler = repo.TumEtkinlikleriGetir();
+            else
+                etkinlikler = repo.KullaniciyaGoreEtkinlikleriGetir(_aktifKullanici.KullaniciId);
 
             dgvEtkinlikler.DataSource = null;
             dgvEtkinlikler.DataSource = etkinlikler;
 
-            // Kolon başlıklarını Türkçe yap
             if (dgvEtkinlikler.Columns.Count > 0)
             {
                 dgvEtkinlikler.Columns["EtkinlikId"].HeaderText = "ID";
-                dgvEtkinlikler.Columns["EtkinlikAdi"].HeaderText = "Etkinlik Adı";
-                dgvEtkinlikler.Columns["TurAdi"].HeaderText = "Tür";
+                dgvEtkinlikler.Columns["EtkinlikAdi"].HeaderText = "Etkinlik Adi";
+                dgvEtkinlikler.Columns["TurAdi"].HeaderText = "Tur";
                 dgvEtkinlikler.Columns["MekanAdi"].HeaderText = "Mekan";
-                dgvEtkinlikler.Columns["BaslangicTarihi"].HeaderText = "Başlangıç";
-                dgvEtkinlikler.Columns["BitisTarihi"].HeaderText = "Bitiş";
-                dgvEtkinlikler.Columns["MusteriAdi"].HeaderText = "Müşteri";
+                dgvEtkinlikler.Columns["BaslangicTarihi"].HeaderText = "Baslangic";
+                dgvEtkinlikler.Columns["BitisTarihi"].HeaderText = "Bitis";
+                dgvEtkinlikler.Columns["MusteriAdi"].HeaderText = "Musteri";
                 dgvEtkinlikler.Columns["Durum"].HeaderText = "Durum";
-                dgvEtkinlikler.Columns["SozlesmeBedeli"].HeaderText = "Sözleşme Bedeli";
-
-                // Gereksiz kolonları gizle
+                dgvEtkinlikler.Columns["SozlesmeBedeli"].HeaderText = "Sozlesme Bedeli";
                 dgvEtkinlikler.Columns["TurId"].Visible = false;
                 dgvEtkinlikler.Columns["MekanId"].Visible = false;
                 dgvEtkinlikler.Columns["MusteriTelefon"].Visible = false;
                 dgvEtkinlikler.Columns["OlusturanKullaniciId"].Visible = false;
+                dgvEtkinlikler.Columns["MusteriKullaniciId"].Visible = false;
+
+                // Kullanici ise butonlari gizle
+                btnYeniEtkinlik.Visible = _aktifKullanici.Rol == "Admin";
+                btnDuzenle.Visible = _aktifKullanici.Rol == "Admin";
+                btnSil.Visible = _aktifKullanici.Rol == "Admin";
             }
         }
-
         private void btnYeniEtkinlik_Click(object sender, EventArgs e)
         {
             EtkinlikForm form = new EtkinlikForm(_aktifKullanici);
