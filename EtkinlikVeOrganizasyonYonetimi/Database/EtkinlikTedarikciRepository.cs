@@ -1,9 +1,6 @@
 ﻿using EtkinlikVeOrganizasyonYonetimi.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 
 namespace EtkinlikVeOrganizasyonYonetimi.Database
@@ -68,7 +65,20 @@ namespace EtkinlikVeOrganizasyonYonetimi.Database
             }
         }
 
-        // 48 saat kontrolü — teslim onayı olmayan tedarikçileri Kritik yap
+        // Atama siler
+        public void AtamaSil(int id)
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = "DELETE FROM EtkinlikTedarikciler WHERE Id = @Id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        // 48 saat kontrolu — teslim onayi olmayan tedarikcileri Kritik yap
         public void KritikTedarikciGuncelle()
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())

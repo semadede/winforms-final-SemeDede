@@ -112,6 +112,26 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             AtananlariYukle();
         }
 
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (dgvAtananTedarikciler.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Lutfen silmek istediginiz atamay secin.", "Uyari", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult sonuc = MessageBox.Show("Bu atamay silmek istediginize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sonuc == DialogResult.Yes)
+            {
+                int id = (int)dgvAtananTedarikciler.SelectedRows[0].Cells["Id"].Value;
+                EtkinlikTedarikciRepository repo = new EtkinlikTedarikciRepository();
+                repo.AtamaSil(id);
+                AtananlariYukle();
+            }
+        }
+
+
         private void btnIptal_Click(object sender, EventArgs e)
         {
             this.Close();
