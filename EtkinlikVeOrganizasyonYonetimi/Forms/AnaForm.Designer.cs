@@ -112,7 +112,6 @@
             this.bütçeFaturaToolStripMenuItem.Name = "bütçeFaturaToolStripMenuItem";
             this.bütçeFaturaToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.bütçeFaturaToolStripMenuItem.Text = "Bütçe & Fatura";
-
             // 
             // bütçeYönetimiToolStripMenuItem
             // 
@@ -124,8 +123,9 @@
             // faturaOluşturToolStripMenuItem
             // 
             this.faturaOluşturToolStripMenuItem.Name = "faturaOluşturToolStripMenuItem";
-            this.faturaOluşturToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.faturaOluşturToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.faturaOluşturToolStripMenuItem.Text = "Fatura Oluştur";
+            this.faturaOluşturToolStripMenuItem.Click += new System.EventHandler(this.faturaOluşturToolStripMenuItem_Click);
             // 
             // bütçeFaturaToolStripMenuItem1
             // 
@@ -139,6 +139,7 @@
             this.pnlIcerik.Name = "pnlIcerik";
             this.pnlIcerik.Size = new System.Drawing.Size(800, 420);
             this.pnlIcerik.TabIndex = 1;
+           
             // 
             // AnaForm
             // 

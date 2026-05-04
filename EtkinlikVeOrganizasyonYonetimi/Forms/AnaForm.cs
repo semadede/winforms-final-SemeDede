@@ -59,5 +59,12 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             ButceForm form = new ButceForm();
             form.ShowDialog();
         }
+
+     
+        private void faturaOluşturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FaturaForm form = new FaturaForm();
+            form.ShowDialog();
+        }
     }
 }
