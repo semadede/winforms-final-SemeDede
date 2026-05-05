@@ -32,7 +32,12 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
 
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult sonuc = MessageBox.Show("Cıkmak istediginize emin misiniz?", "Cikis", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sonuc == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Exit();
+            }
         }
 
         private void etkinlikYönetimiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,5 +91,8 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             KullaniciYonetimForm form = new KullaniciYonetimForm();
             form.ShowDialog();
         }
+
+       
+       
     }
 }

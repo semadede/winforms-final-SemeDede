@@ -62,7 +62,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
                 dgvAtananTedarikciler.Columns["TedarikciId"].Visible = false;
                 dgvAtananTedarikciler.Columns["FirmaAdi"].HeaderText = "Firma";
                 dgvAtananTedarikciler.Columns["TeslimTarihi"].HeaderText = "Teslim Tarihi";
-                dgvAtananTedarikciler.Columns["TeslimOnaylandi"].HeaderText = "Onaylandı";
+                dgvAtananTedarikciler.Columns["TeslimOnaylandi"].Visible = false;
                 dgvAtananTedarikciler.Columns["Durum"].HeaderText = "Durum";
                 dgvAtananTedarikciler.Columns["Notlar"].HeaderText = "Notlar";
             }

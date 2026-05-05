@@ -7,6 +7,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
 {
     public partial class LoginForm : Form
     {
+        public Kullanici GirisYapanKullanici { get; private set; }
         public LoginForm()
         {
             InitializeComponent();
@@ -32,20 +33,12 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
                 return;
             }
 
-            MessageBox.Show($"Hoş geldiniz, {kullanici.KullaniciAdi}!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            AnaForm anaForm = new AnaForm(kullanici);
-            anaForm.Show();
-            this.Hide();
+            MessageBox.Show($"Hos geldiniz, {kullanici.KullaniciAdi}!", "Basarili", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            GirisYapanKullanici = kullanici;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

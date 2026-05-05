@@ -38,9 +38,9 @@
             this.bütçeFaturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bütçeYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.faturaOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kullanıcıYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bütçeFaturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlIcerik = new System.Windows.Forms.Panel();
-            this.kullanıcıYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,11 +129,24 @@
             this.faturaOluşturToolStripMenuItem.Text = "Fatura Oluştur";
             this.faturaOluşturToolStripMenuItem.Click += new System.EventHandler(this.faturaOluşturToolStripMenuItem_Click);
             // 
+            // kullanıcıYönetimiToolStripMenuItem
+            // 
+            this.kullanıcıYönetimiToolStripMenuItem.Name = "kullanıcıYönetimiToolStripMenuItem";
+            this.kullanıcıYönetimiToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.kullanıcıYönetimiToolStripMenuItem.Text = "Kullanıcı Yönetimi";
+            this.kullanıcıYönetimiToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıYönetimiToolStripMenuItem_Click);
+            // 
             // bütçeFaturaToolStripMenuItem1
             // 
             this.bütçeFaturaToolStripMenuItem1.Name = "bütçeFaturaToolStripMenuItem1";
             this.bütçeFaturaToolStripMenuItem1.Size = new System.Drawing.Size(53, 24);
             this.bütçeFaturaToolStripMenuItem1.Text = "Çıkış";
+
+            //
+            // cikisYap
+            //
+            this.bütçeFaturaToolStripMenuItem1.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
+
             // 
             // pnlIcerik
             // 
@@ -141,13 +154,6 @@
             this.pnlIcerik.Name = "pnlIcerik";
             this.pnlIcerik.Size = new System.Drawing.Size(800, 420);
             this.pnlIcerik.TabIndex = 1;
-            // 
-            // kullanıcıYönetimiToolStripMenuItem
-            // 
-            this.kullanıcıYönetimiToolStripMenuItem.Name = "kullanıcıYönetimiToolStripMenuItem";
-            this.kullanıcıYönetimiToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
-            this.kullanıcıYönetimiToolStripMenuItem.Text = "Kullanıcı Yönetimi";
-            this.kullanıcıYönetimiToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıYönetimiToolStripMenuItem_Click);
             // 
             // AnaForm
             // 

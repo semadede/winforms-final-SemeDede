@@ -47,6 +47,11 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
                 return;
             }
 
+            if (cmbRol.SelectedItem == null)
+            {
+                MessageBox.Show("Lutfen rol secin.", "Uyari", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string rol = cmbRol.SelectedItem.ToString();
 
             KullaniciRepository repo = new KullaniciRepository();
