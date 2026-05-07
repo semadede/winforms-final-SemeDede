@@ -34,8 +34,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtMekanAdi = new System.Windows.Forms.TextBox();
             this.txtKapasite = new System.Windows.Forms.TextBox();
+            // kapasite kismi sadece rakam girilir!
+            this.txtKapasite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKapasite_KeyPress);
             this.txtAdres = new System.Windows.Forms.TextBox();
             this.txtKurulumSuresi = new System.Windows.Forms.TextBox();
+            // kurulum kismi sadece rakam girilir!
+            this.txtKurulumSuresi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKurulumSuresi_KeyPress);
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnIptal = new System.Windows.Forms.Button();
             this.SuspendLayout();

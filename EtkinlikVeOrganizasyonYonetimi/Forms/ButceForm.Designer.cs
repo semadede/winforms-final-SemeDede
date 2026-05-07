@@ -39,10 +39,14 @@
             this.btnMaliyetEkle = new System.Windows.Forms.Button();
             this.cmbEtkinlik = new System.Windows.Forms.ComboBox();
             this.txtPlanlananButce = new System.Windows.Forms.TextBox();
+            // Planlanan Butce kismi sadece sayi olacak
+            this.txtPlanlananButce.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlanlananButce_KeyPress);
             this.txtGerceklesenToplam = new System.Windows.Forms.TextBox();
             this.txtFark = new System.Windows.Forms.TextBox();
             this.txtMaliyetAciklama = new System.Windows.Forms.TextBox();
             this.txtTutar = new System.Windows.Forms.TextBox();
+            // Tutar kismi sadece sayi olacak
+            this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaliyetler)).BeginInit();
             this.SuspendLayout();
             // 

@@ -34,7 +34,11 @@
             this.cmbMusteriKullanici = new System.Windows.Forms.ComboBox();
             this.txtMusteriAdi = new System.Windows.Forms.TextBox();
             this.txtMusteriTelefon = new System.Windows.Forms.TextBox();
+            // sadece number
+            this.txtMusteriTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMusteriTelefon_KeyPress);
             this.txtSozlesmeBedeli = new System.Windows.Forms.TextBox();
+            // sadece number
+            this.txtSozlesmeBedeli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSozlesmeBedeli_KeyPress);
             this.dtpBaslangic = new System.Windows.Forms.DateTimePicker();
             this.dtpBitis = new System.Windows.Forms.DateTimePicker();
             this.btnKaydet = new System.Windows.Forms.Button();

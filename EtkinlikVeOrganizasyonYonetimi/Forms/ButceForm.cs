@@ -162,5 +162,17 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             MaliyetleriYukle(etkinlikId);
             HesaplaVeGoster(etkinlikId, butce.PlanlananButce);
         }
+
+        private void txtPlanlananButce_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
+
+        private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
     }
 }

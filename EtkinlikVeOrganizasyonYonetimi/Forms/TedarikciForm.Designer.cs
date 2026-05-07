@@ -33,6 +33,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtFirmaAdi = new System.Windows.Forms.TextBox();
             this.txtTelefon = new System.Windows.Forms.TextBox();
+            // Telefon kismi sadece sayi girilebilir
+            this.txtTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefon_KeyPress);
             this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.chkAktif = new System.Windows.Forms.CheckBox();
             this.btnKaydet = new System.Windows.Forms.Button();

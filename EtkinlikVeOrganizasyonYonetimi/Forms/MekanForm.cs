@@ -56,5 +56,18 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
         {
             this.Close();
         }
+
+        // Kapasite ve Kurulum Suresi sadece rakam girilir!
+        private void txtKapasite_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
+
+        private void txtKurulumSuresi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
     }
 }

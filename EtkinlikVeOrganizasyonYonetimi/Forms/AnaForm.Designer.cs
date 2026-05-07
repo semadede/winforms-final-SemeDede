@@ -67,7 +67,7 @@
             this.etkinlikYönetimiToolStripMenuItem.Name = "etkinlikYönetimiToolStripMenuItem";
             this.etkinlikYönetimiToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
             this.etkinlikYönetimiToolStripMenuItem.Text = "Etkinlik Yönetimi";
-            this.etkinlikYönetimiToolStripMenuItem.Click += new System.EventHandler(this.etkinlikYönetimiToolStripMenuItem_Click);
+            
             // 
             // etkinlikListesiToolStripMenuItem
             // 

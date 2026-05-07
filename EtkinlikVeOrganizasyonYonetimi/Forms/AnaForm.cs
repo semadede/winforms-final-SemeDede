@@ -40,9 +40,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             }
         }
 
-        private void etkinlikYönetimiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
+       
 
         private void etkinlikListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
