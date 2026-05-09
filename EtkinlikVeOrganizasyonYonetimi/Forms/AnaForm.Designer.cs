@@ -55,7 +55,7 @@
             this.bütçeFaturaToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,22 +64,22 @@
             this.etkinlikYönetimiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.etkinlikListesiToolStripMenuItem,
             this.mekanYönetimiToolStripMenuItem});
+            this.etkinlikYönetimiToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.etkinlikYönetimiToolStripMenuItem.Name = "etkinlikYönetimiToolStripMenuItem";
-            this.etkinlikYönetimiToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.etkinlikYönetimiToolStripMenuItem.Size = new System.Drawing.Size(170, 32);
             this.etkinlikYönetimiToolStripMenuItem.Text = "Etkinlik Yönetimi";
-            
             // 
             // etkinlikListesiToolStripMenuItem
             // 
             this.etkinlikListesiToolStripMenuItem.Name = "etkinlikListesiToolStripMenuItem";
-            this.etkinlikListesiToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.etkinlikListesiToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.etkinlikListesiToolStripMenuItem.Text = "Etkinlik Listesi";
             this.etkinlikListesiToolStripMenuItem.Click += new System.EventHandler(this.etkinlikListesiToolStripMenuItem_Click);
             // 
             // mekanYönetimiToolStripMenuItem
             // 
             this.mekanYönetimiToolStripMenuItem.Name = "mekanYönetimiToolStripMenuItem";
-            this.mekanYönetimiToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.mekanYönetimiToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.mekanYönetimiToolStripMenuItem.Text = "Mekan Yönetimi";
             this.mekanYönetimiToolStripMenuItem.Click += new System.EventHandler(this.mekanYönetimiToolStripMenuItem_Click);
             // 
@@ -88,21 +88,22 @@
             this.tedarikçiYönetimiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tedarikçiListesiToolStripMenuItem,
             this.etkinliğeTedarikçiAtaToolStripMenuItem});
+            this.tedarikçiYönetimiToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tedarikçiYönetimiToolStripMenuItem.Name = "tedarikçiYönetimiToolStripMenuItem";
-            this.tedarikçiYönetimiToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.tedarikçiYönetimiToolStripMenuItem.Size = new System.Drawing.Size(183, 32);
             this.tedarikçiYönetimiToolStripMenuItem.Text = "Tedarikçi Yönetimi";
             // 
             // tedarikçiListesiToolStripMenuItem
             // 
             this.tedarikçiListesiToolStripMenuItem.Name = "tedarikçiListesiToolStripMenuItem";
-            this.tedarikçiListesiToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.tedarikçiListesiToolStripMenuItem.Size = new System.Drawing.Size(289, 32);
             this.tedarikçiListesiToolStripMenuItem.Text = "Tedarikçi Listesi";
             this.tedarikçiListesiToolStripMenuItem.Click += new System.EventHandler(this.tedarikçiListesiToolStripMenuItem_Click);
             // 
             // etkinliğeTedarikçiAtaToolStripMenuItem
             // 
             this.etkinliğeTedarikçiAtaToolStripMenuItem.Name = "etkinliğeTedarikçiAtaToolStripMenuItem";
-            this.etkinliğeTedarikçiAtaToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.etkinliğeTedarikçiAtaToolStripMenuItem.Size = new System.Drawing.Size(289, 32);
             this.etkinliğeTedarikçiAtaToolStripMenuItem.Text = "Etkinliğe Tedarikçi Ata";
             this.etkinliğeTedarikçiAtaToolStripMenuItem.Click += new System.EventHandler(this.etkinliğeTedarikçiAtaToolStripMenuItem_Click);
             // 
@@ -111,42 +112,40 @@
             this.bütçeFaturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bütçeYönetimiToolStripMenuItem,
             this.faturaOluşturToolStripMenuItem});
+            this.bütçeFaturaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bütçeFaturaToolStripMenuItem.Name = "bütçeFaturaToolStripMenuItem";
-            this.bütçeFaturaToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.bütçeFaturaToolStripMenuItem.Size = new System.Drawing.Size(138, 32);
             this.bütçeFaturaToolStripMenuItem.Text = "Bütçe & Fatura";
             // 
             // bütçeYönetimiToolStripMenuItem
             // 
             this.bütçeYönetimiToolStripMenuItem.Name = "bütçeYönetimiToolStripMenuItem";
-            this.bütçeYönetimiToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.bütçeYönetimiToolStripMenuItem.Size = new System.Drawing.Size(227, 32);
             this.bütçeYönetimiToolStripMenuItem.Text = "Bütçe Yönetimi";
             this.bütçeYönetimiToolStripMenuItem.Click += new System.EventHandler(this.bütçeYönetimiToolStripMenuItem_Click);
             // 
             // faturaOluşturToolStripMenuItem
             // 
             this.faturaOluşturToolStripMenuItem.Name = "faturaOluşturToolStripMenuItem";
-            this.faturaOluşturToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.faturaOluşturToolStripMenuItem.Size = new System.Drawing.Size(227, 32);
             this.faturaOluşturToolStripMenuItem.Text = "Fatura Oluştur";
             this.faturaOluşturToolStripMenuItem.Click += new System.EventHandler(this.faturaOluşturToolStripMenuItem_Click);
             // 
             // kullanıcıYönetimiToolStripMenuItem
             // 
+            this.kullanıcıYönetimiToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kullanıcıYönetimiToolStripMenuItem.Name = "kullanıcıYönetimiToolStripMenuItem";
-            this.kullanıcıYönetimiToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.kullanıcıYönetimiToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.kullanıcıYönetimiToolStripMenuItem.Text = "Kullanıcı Yönetimi";
             this.kullanıcıYönetimiToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıYönetimiToolStripMenuItem_Click);
             // 
             // bütçeFaturaToolStripMenuItem1
             // 
+            this.bütçeFaturaToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bütçeFaturaToolStripMenuItem1.Name = "bütçeFaturaToolStripMenuItem1";
-            this.bütçeFaturaToolStripMenuItem1.Size = new System.Drawing.Size(53, 24);
+            this.bütçeFaturaToolStripMenuItem1.Size = new System.Drawing.Size(66, 32);
             this.bütçeFaturaToolStripMenuItem1.Text = "Çıkış";
-
-            //
-            // cikisYap
-            //
             this.bütçeFaturaToolStripMenuItem1.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
-
             // 
             // pnlIcerik
             // 

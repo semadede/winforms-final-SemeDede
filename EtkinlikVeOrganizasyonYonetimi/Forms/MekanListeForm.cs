@@ -21,6 +21,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             MekanlariYukle();
             // Sadece Admin silebilir
             btnSil.Visible = _aktifKullanici.Rol == "Admin";
+            dgvMekanlar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void MekanlariYukle()

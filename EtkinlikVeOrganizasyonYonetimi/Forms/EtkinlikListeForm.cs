@@ -58,6 +58,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
                 btnDuzenle.Visible = _aktifKullanici.Rol == "Admin";
                 btnSil.Visible = _aktifKullanici.Rol == "Admin";
             }
+            dgvEtkinlikler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void btnYeniEtkinlik_Click(object sender, EventArgs e)
         {
@@ -97,6 +98,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
                 EtkinlikleriYukle();
             }
         }
+
 
     }
 }

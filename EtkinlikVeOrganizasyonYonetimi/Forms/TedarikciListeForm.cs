@@ -21,6 +21,7 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             TedarikcileriYukle();
             // Sadece Admin silebilir
             btnSil.Visible = _aktifKullanici.Rol == "Admin";
+            dgvTedarikciler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void TedarikcileriYukle()

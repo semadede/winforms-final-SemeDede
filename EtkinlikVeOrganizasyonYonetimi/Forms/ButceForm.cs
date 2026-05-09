@@ -20,6 +20,8 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             cmbEtkinlik.DataSource = etkinlikler;
             cmbEtkinlik.DisplayMember = "EtkinlikAdi";
             cmbEtkinlik.ValueMember = "EtkinlikId";
+
+            dgvMaliyetler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private int SeciliEtkinlikId()

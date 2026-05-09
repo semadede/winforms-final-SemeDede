@@ -39,6 +39,6 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             this.Close();
         }
 
-        
+
     }
 }

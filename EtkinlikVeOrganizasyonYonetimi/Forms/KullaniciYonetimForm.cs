@@ -20,6 +20,8 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
             cmbRol.SelectedIndex = 1;
 
             KullanicilariYukle();
+
+            dgvKullanicilar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void KullanicilariYukle()

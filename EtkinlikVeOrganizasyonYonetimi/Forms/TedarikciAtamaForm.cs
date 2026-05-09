@@ -38,6 +38,8 @@ namespace EtkinlikVeOrganizasyonYonetimi.Forms
 
             // Etkinlik seçilince atananları yükle
             AtananlariYukle();
+            dgvAtananTedarikciler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void cmbEtkinlik_SelectedIndexChanged(object sender, EventArgs e)
