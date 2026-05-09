@@ -79,7 +79,7 @@ AnaForm (Dashboard)
 |---|---|
 | Mekan çakışma kontrolü | Kurulum süresi dahil tarih-saat çakışması engellenir |
 | 48 saat uyarısı | Teslim onayı olmayan tedarikçiler otomatik "Kritik" işaretlenir |
-| Bütçe aşımı uyarısı | Gerçekleşen maliyet planlanan bütçenin %115'ini geçince kırmızı uyarı |
+| Bütçe aşımı uyarısı | Gerçekleşen maliyet planlanan bütçenin %15'ini geçince kırmızı uyarı |
 | Rol bazlı erişim | Admin tüm işlemleri yapabilir; Kullanıcı sadece kendi etkinliklerini görür |
 
 ### Raporlar
