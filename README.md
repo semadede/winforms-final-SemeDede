@@ -79,7 +79,7 @@ AnaForm (Dashboard)
 |---|---|
 | Mekan çakışma kontrolü | Kurulum süresi dahil tarih-saat çakışması engellenir |
 | 48 saat uyarısı | Teslim onayı olmayan tedarikçiler otomatik "Kritik" işaretlenir |
-| Bütçe aşımı uyarısı | Gerçekleşen maliyet planlanan bütçenin %15'ini geçince kırmızı uyarı |
+| Bütçe aşımı uyarısı | Gerçekleşen maliyet planlanan bütçenin %115'ini geçince kırmızı uyarı |
 | Rol bazlı erişim | Admin tüm işlemleri yapabilir; Kullanıcı sadece kendi etkinliklerini görür |
 
 ### Raporlar
@@ -158,6 +158,22 @@ Admin hesabıyla giriş yapıldığında tüm menüler görünür. Kullanıcı r
 4. **Tedarikçi ata** → Tedarikçiye Tedarikçi Ata
 5. **Bütçe gir** → Bütçe Yönetimi
 6. **PDF oluştur** → Bütçe & Fatura
+
+---
+
+## Ekran Görüntüleri
+
+### Giriş Ekranı
+![Login](docs/screenshots/uygulamaGorselLogin.png)
+
+### Ana Ekran (Dashboard)
+![Dashboard](docs/screenshots/uygulamaGorselDashboard.png)
+
+### Mekan Yönetimi
+![Mekanlar](docs/screenshots/uygulamaGorselMekanlar.png)
+
+### Bütçe Yönetimi
+![Bütçe](docs/screenshots/uygulamaGorselButce.png)
 
 ---
 
